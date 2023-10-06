@@ -70,7 +70,7 @@ function NavBar({navigate}) {
                 </Grid>
                 <Grid item sx={6} align="center">
                   <Box width={800}>
-                  <img src={newlogo} width={350}/>
+                  <img src="https://raw.githubusercontent.com/sarahadean/Mama-Match/main/.github/images/UpdatedCover.png" width={350}/>
                   </Box>
                   
               </Grid>
@@ -103,7 +103,7 @@ function NavBar({navigate}) {
               </Grid>
               <Grid item></Grid>
               <Grid item sx={1} >
-                <img src={newlogo} width={350}/>
+                <img src="https://raw.githubusercontent.com/sarahadean/Mama-Match/main/.github/images/UpdatedCover.png" width={350}/>
               </Grid>
             </Grid>
           </>) }
