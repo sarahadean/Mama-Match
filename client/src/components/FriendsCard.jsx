@@ -2,8 +2,9 @@ import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import {Card, Button, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import { MdOutlineForum } from "react-icons/md";
+import { MdOutlineClear } from "react-icons/md"
+
 
 
 function FriendsCard({friend, friendship, updateFriendship}) {
@@ -64,14 +65,14 @@ return (
           <Grid container sx={{placeItems: 'center'}} spacing={2}>
             <Grid item xs={6}>
               <IconButton sx={{ display: 'flex', flexDirection: 'column'}} component={Link} to={url}>
-                <ForumOutlinedIcon/>
+                <MdOutlineForum/>
                 <Typography variant="caption">Chat</Typography>
               </IconButton>
             </Grid>
 
             <Grid item xs={6}>
               <IconButton sx={{ display: 'flex', flexDirection: 'column'}} onClick={() => updateToggle()}>
-                <ClearOutlinedIcon />
+                <MdOutlineClear />
                 <Typography variant="caption">Vibes off?</Typography>
               </IconButton>
             </Grid>

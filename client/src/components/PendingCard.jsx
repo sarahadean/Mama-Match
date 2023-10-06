@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import UserContext from './Pages/UserContext';
 import {Card, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
-
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { MdOutlineClear } from "react-icons/md"
 function PendingCard({updatePendingFriendsList, pendingFriends, friend}) {
   const {id, name, profile_image, location, about, mom_life, interests} = friend
   const { user, setUser } = useContext(UserContext);
@@ -53,14 +52,14 @@ function PendingCard({updatePendingFriendsList, pendingFriends, friend}) {
         <Grid container sx={{placeItems: 'center'}} spacing={2}>
             <Grid item xs={6}>
               <IconButton sx={{ display: 'flex', flexDirection: 'column'}} onClick={(e) => handleSubmit(e, "CONFIRMED")}>
-                <FavoriteBorderOutlinedIcon/>
+                <MdOutlineFavoriteBorder />
                 <Typography variant="caption">Confirm Friend</Typography>
               </IconButton>
             </Grid>
 
             <Grid item xs={6}>
               <IconButton sx={{ display: 'flex', flexDirection: 'column'}} onClick={(e) => handleSubmit(e, "HIDDEN")}>
-                <ClearOutlinedIcon/>
+                <MdOutlineClear/>
                 <Typography variant="caption">Decline</Typography>
               </IconButton>
             </Grid>

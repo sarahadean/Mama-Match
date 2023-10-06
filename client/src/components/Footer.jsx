@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import {Box, Paper} from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
+import { MdFavorite } from "react-icons/md"
+import { MdRestore } from "react-icons/md"
 
 function Footer() {
   const [value, setValue] = React.useState(0);
@@ -27,8 +27,8 @@ function Footer() {
           setValue(newValue);
         }}
       > 
-        <BottomNavigationAction label="Requests" component={Link} to='/interested' icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Friends" component={Link} to='/friends' icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Requests" component={Link} to='/interested' icon={<MdRestore />} />
+        <BottomNavigationAction label="Friends" component={Link} to='/friends' icon={<MdFavorite />} />
       </BottomNavigation>
       </Paper>
       ) : (""

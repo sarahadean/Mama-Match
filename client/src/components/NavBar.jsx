@@ -2,9 +2,8 @@ import React, { useContext, useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import { Button, Box, Grid, Toolbar, Avatar, IconButton, AppBar, Typography} from '@mui/material'
-import HomeIcon from '@mui/icons-material/Home';
 import newlogo from './../logos/UpdatedCover.png'
-
+import { MdHome } from "react-icons/md"
 
 
 function NavBar({navigate}) {
@@ -53,7 +52,7 @@ function NavBar({navigate}) {
 
                 <Grid item sx={1}>
                   <IconButton component={Link} to="/home" value="home">
-                      <HomeIcon />
+                      <MdHome />
                   </IconButton >
                 </Grid>
 

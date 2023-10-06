@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext} from 'react'
 import UserContext from './UserContext'
 import UserCard from '../UserCard';
-import {Grid, Container, Box } from '@mui/material'
+import {Grid, Box } from '@mui/material'
 
 
 function Home() {
