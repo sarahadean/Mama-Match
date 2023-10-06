@@ -1,5 +1,5 @@
 import React, { useContext} from 'react'
-import { Grid, Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Grid, ListItem, ListItemText, Paper } from '@mui/material';
 import UserContext from './Pages/UserContext';
 
 

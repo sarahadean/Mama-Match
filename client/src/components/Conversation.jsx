@@ -4,8 +4,7 @@ import { useParams } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import Message from './Message';
 import { makeStyles } from '@material-ui/core/styles';
-import { Fab, Container, TextField, Divider, Grid, Typography, List, ListItem, ListItemIcon, Paper } from '@mui/material';
-import SendIcon from '@material-ui/icons/Send';
+import { Container, TextField, Divider, Typography, List } from '@mui/material';
 
 //fetch all of the messages for a single conversation
 //map through fetch for message component

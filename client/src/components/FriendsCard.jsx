@@ -1,11 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
-import {Card, Button, Grid, Box, CardHeader, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
-import { Formik, Field, ErrorMessage } from "formik";
+import {Card, Button, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
-import * as yup from "yup";
 
 
 function FriendsCard({friend, friendship, updateFriendship}) {

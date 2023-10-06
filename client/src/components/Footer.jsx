@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import {Box, Paper, List, ListItem} from '@mui/material';
+import {Box, Paper} from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 
 function Footer() {

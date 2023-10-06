@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserContext from './UserContext';
-import { Grid, List, Paper, Box, Button, ImageList, ImageListItem, Typography, ListItem, ListItemText, IconButton } from '@mui/material';
+import { Grid, List, Paper, Box, Button, ImageList, ImageListItem, ListItemText, IconButton } from '@mui/material';
 import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 function Welcome() {

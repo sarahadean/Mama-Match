@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import UserContext from './Pages/UserContext';
-import { CardHeader, Button, Box, useMediaQuery, Grid, Toolbar, Avatar, IconButton, Menu, Fade, MenuItem, AppBar, Typography, Tab, Tabs, Icon} from '@mui/material'
+import { Button, Box, Grid, Toolbar, Avatar, IconButton, AppBar, Typography} from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home';
-import logo from './../logos/BloomCover.png';
 import newlogo from './../logos/UpdatedCover.png'
 
 

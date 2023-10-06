@@ -1,11 +1,9 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useContext } from "react";
-import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./UserContext";
 import { TextField } from "formik-mui";
-import {Typography, FormControl, Box, Button, ListItem, List, ListItemText, Divider, RadioGroup, Radio, FormControlLabel} from "@mui/material";
-import { Image } from "@material-ui/icons";
+import {Typography, FormControl, Box, Button, ListItem, List, ListItemText, Divider, RadioGroup} from "@mui/material";
 
 function Profile() {
   const { user, setUser } = useContext(UserContext);

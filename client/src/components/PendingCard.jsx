@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import UserContext from './Pages/UserContext';
-import {Card, Grid, CardHeader, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
+import {Card, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 
