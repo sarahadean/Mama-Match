@@ -3,7 +3,6 @@ import { Formik, Field, ErrorMessage} from "formik";
 import { useParams } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import Message from './Message';
-import { makeStyles } from '@material-ui/core/styles';
 import { Container, TextField, Divider, Typography, List } from '@mui/material';
 
 //fetch all of the messages for a single conversation
@@ -16,26 +15,6 @@ function Conversation() {
 
   const [messages, setMessages] = useState([])
   const [error, setError] = useState(null);
-
-  const useStyles = makeStyles({
-    // chatSection: {
-    //   width: '100%',
-    //   height: '80vh'
-    // },
-    headBG: {
-        backgroundColor: '#e0e0e0'
-    },
-    borderRight500: {
-        borderRight: '1px solid #e0e0e0'
-    },
-    messageArea: {
-      // height: '70vh',
-      overflowY: 'auto'
-    }
-  });
-
-
-  const classes = useStyles();
 
 
 useEffect(() => {
@@ -63,7 +42,7 @@ console.log(messages)
           </Typography>
 
           
-          <List className={classes.messageArea}>
+          <List style={{overflowY: 'auto'}}>
             {[...messages].map((message) => (
               <Message key={message.id} message={message} />
             ))}
