@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { Link, NavLink } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import { Button, Box, Grid, Toolbar, Avatar, IconButton, AppBar, Typography} from '@mui/material'
-import newlogo from './../logos/UpdatedCover.png'
 import { MdHome } from "react-icons/md"
 
 
