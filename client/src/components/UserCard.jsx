@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import UserContext from './Pages/UserContext';
 import {Card, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { MdOutlineClear } from "react-icons/md"
 
 
 //need new status = Not interested??
@@ -63,12 +63,12 @@ function UserCard({ friend, friends, updateFriend }) {
           spacing={20}>
             <Grid item sx={6}>
             <IconButton onClick={(e) => handleSubmit(e, "PENDING")} sx={{background:"#81c784"}} >
-            <FavoriteBorderOutlinedIcon/>
+            <MdOutlineFavoriteBorder />
           </IconButton>
             </Grid>
             <Grid item sx={6}>
             <IconButton onClick={(e) => handleSubmit(e, "HIDDEN")}sx={{background:"#e57373"}}>
-            <ClearOutlinedIcon/>
+            <MdOutlineClear/>
           </IconButton>
             </Grid>
           </Grid>
