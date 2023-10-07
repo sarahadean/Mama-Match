@@ -27,7 +27,6 @@ class Friendship(db.Model, SerializerMixin):
             "messages":[message.serialize for message in self.messages]
         }
 
-
 class User(db.Model, SerializerMixin, UserMixin):
     __tablename__ = "users"
 
@@ -37,7 +36,7 @@ class User(db.Model, SerializerMixin, UserMixin):
     _password_hash = db.Column(db.String)
     email = db.Column(db.String)
     phone_number = db.Column(db.String)
-    dob = db.Column(db.String) #<------change data-type to date later?
+    dob = db.Column(db.String) 
     profile_image = db.Column(db.String)
     location = db.Column(db.String)
     about = db.Column(db.String)
