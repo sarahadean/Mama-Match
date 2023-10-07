@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext} from 'react'
-import {useNavigate } from 'react-router-dom'
-import Conversation from '../Conversation'
-import UserContext from './UserContext'
+import React, { useEffect, useState, useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
+import Conversation from '../Conversation';
+import UserContext from './UserContext';
 
 function MessagesList() {
   const navigate = useNavigate()

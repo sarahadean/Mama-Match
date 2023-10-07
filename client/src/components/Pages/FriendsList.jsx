@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import UserContext from './UserContext';
 import FriendsCard from '../FriendsCard';
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 function FriendsList({friendship, updateFriendship}) {
   const { user, setUser } = useContext(UserContext);

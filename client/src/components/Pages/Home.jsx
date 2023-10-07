@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext} from 'react'
-import UserContext from './UserContext'
+import React, { useEffect, useState, useContext} from 'react';
+import UserContext from './UserContext';
 import UserCard from '../UserCard';
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 
 function Home() {

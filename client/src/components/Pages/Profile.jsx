@@ -2,7 +2,6 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./UserContext";
-// import { TextField } from "formik-mui";
 import { TextField } from 'formik-mui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -11,8 +10,8 @@ import Button from '@mui/material/Button';
 import ListItem from '@mui/material/ListItem';
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider'
-import RadioGroup from '@mui/material/RadioGroup'
+import Divider from '@mui/material/Divider';
+import RadioGroup from '@mui/material/RadioGroup';
 
 
 

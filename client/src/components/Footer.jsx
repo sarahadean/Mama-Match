@@ -4,9 +4,8 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
-import { MdFavorite } from "react-icons/md"
-import { MdRestore } from "react-icons/md"
-import Box from '@mui/material/Box'
+import { MdFavorite, MdRestore } from "react-icons/md";
+import Box from '@mui/material/Box';
 
 function Footer() {
   const [value, setValue] = React.useState(0);

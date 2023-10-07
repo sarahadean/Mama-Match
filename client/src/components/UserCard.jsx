@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react'
 import UserContext from './Pages/UserContext';
 import CardMedia from '@mui/material/CardMedia'
-import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { MdOutlineClear } from "react-icons/md"
+import { MdOutlineFavoriteBorder, MdOutlineClear } from "react-icons/md";
 import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'

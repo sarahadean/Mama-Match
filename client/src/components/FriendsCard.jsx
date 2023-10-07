@@ -9,8 +9,7 @@ import CardActions from '@mui/material/CardActions'
 import IconButton from '@mui/material/IconButton'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { MdOutlineForum } from "react-icons/md";
-import { MdOutlineClear } from "react-icons/md"
+import { MdOutlineForum, MdOutlineClear } from "react-icons/md";
 
 
 

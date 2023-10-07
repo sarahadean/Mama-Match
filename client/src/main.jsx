@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './components/App.jsx'
 import './index.css'
-import { ThemeProvider, CssBaseline } from '@mui/material'
+import CssBaseline from '@mui/material/CssBaseline'
+import ThemeProvider from '@mui/material/ThemeProvider'
 import theme from './theme.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

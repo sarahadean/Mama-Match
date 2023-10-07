@@ -1,13 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as yup from "yup";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
 import UserContext from './UserContext';
-// import { TextField } from 'formik-mui';
 import { TextField } from 'formik-mui';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box'
+import Box from '@mui/material/Box';
 
 
 function SignupForm({updateUser}) {
