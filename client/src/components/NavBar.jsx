@@ -5,6 +5,7 @@ import { Button, Box, Grid, Toolbar, Avatar, IconButton, AppBar, Typography} fro
 import { MdHome } from "react-icons/md"
 
 
+
 function NavBar({navigate}) {
   const { user, setUser } = useContext(UserContext);
   const [value, setValue] = useState("undefined")

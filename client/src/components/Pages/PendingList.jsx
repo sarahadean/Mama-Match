@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import UserContext from './UserContext';
 import PendingCard from '../PendingCard';
-import { Typography, Box, Grid } from '@mui/material';
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography';
 
 function PendingList() {
   const { user, setUser } = useContext(UserContext);

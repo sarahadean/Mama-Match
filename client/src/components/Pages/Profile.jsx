@@ -2,8 +2,22 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./UserContext";
-import { TextField } from "formik-mui";
-import {Typography, FormControl, Box, Button, ListItem, List, ListItemText, Divider, RadioGroup} from "@mui/material";
+// import { TextField } from "formik-mui";
+import TextField from 'formik-mui/TextField'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import FormControl from "@mui/material/FormControl";
+import Button from '@mui/material/Button';
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider'
+import RadioGroup from '@mui/material/RadioGroup'
+
+
+
+
+
 
 function Profile() {
   const { user, setUser } = useContext(UserContext);

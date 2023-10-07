@@ -1,7 +1,9 @@
 import React, { useContext} from 'react'
-import { Grid, ListItem, ListItemText, Paper } from '@mui/material';
+import Paper from '@mui/material/Paper';
 import UserContext from './Pages/UserContext';
-
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid'
 
 function Message({message}) {
   const { user, setUser } = useContext(UserContext);

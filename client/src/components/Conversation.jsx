@@ -3,7 +3,11 @@ import { Formik, Field, ErrorMessage} from "formik";
 import { useParams } from "react-router-dom";
 import UserContext from './Pages/UserContext';
 import Message from './Message';
-import { Container, TextField, Divider, Typography, List } from '@mui/material';
+import Container from '@mui/material/Container'
+import TextField from '@mui/material/TextField';
+import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
+import List from '@mui/material/List'
 
 //fetch all of the messages for a single conversation
 //map through fetch for message component

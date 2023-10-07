@@ -3,8 +3,12 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import * as yup from "yup";
 import {useNavigate} from "react-router-dom"
 import UserContext from './UserContext';
-import { TextField } from 'formik-mui';
-import {Typography, Box, Button} from "@mui/material";
+// import { TextField } from 'formik-mui';
+import TextField from 'formik-mui/TextField';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
+
 
 function SignupForm({updateUser}) {
   const { user, setUser } = useContext(UserContext);

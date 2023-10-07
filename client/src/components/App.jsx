@@ -12,7 +12,7 @@ import Header from './Header'
 import Profile from './Pages/Profile'
 import UserContext from './Pages/UserContext'
 import Footer from './Footer'
-import {Box} from '@mui/material'
+import Box from '@mui/material/Box'
 
 function App() {
   const navigate = useNavigate();

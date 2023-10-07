@@ -1,8 +1,16 @@
 import React, { useContext } from 'react';
 import UserContext from './Pages/UserContext';
-import {Card, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
+import CardMedia from '@mui/material/CardMedia'
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { MdOutlineClear } from "react-icons/md"
+import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import IconButton from '@mui/material/IconButton'
+
+
 function PendingCard({updatePendingFriendsList, pendingFriends, friend}) {
   const {id, name, profile_image, location, about, mom_life, interests} = friend
   const { user, setUser } = useContext(UserContext);

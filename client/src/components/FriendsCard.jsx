@@ -1,7 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Link } from "react-router-dom";
 import UserContext from './Pages/UserContext';
-import {Card, Button, Grid, CardContent, CardActions, IconButton, CardMedia, Typography } from '@mui/material'
+import Card from '@mui/material/Card'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import IconButton from '@mui/material/IconButton'
+import CardMedia from '@mui/material/CardMedia'
+import Typography from '@mui/material/Typography'
 import { MdOutlineForum } from "react-icons/md";
 import { MdOutlineClear } from "react-icons/md"
 
