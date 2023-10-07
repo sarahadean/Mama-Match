@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "./UserContext";
 // import { TextField } from "formik-mui";
-import TextField from 'formik-mui/TextField'
+import { TextField } from 'formik-mui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import FormControl from "@mui/material/FormControl";
