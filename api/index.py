@@ -9,16 +9,10 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-# @app.route('/')
-# def index():
-#     return '<h1>Welcome to MamaMatch</h1>'
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.filter(User.id == user_id).first()
 
-
-#============= SIGNUP ===============#
 class Signup(Resource):
     def post(self):
         data = request.get_json()
@@ -28,18 +22,10 @@ class Signup(Resource):
                 name = data.get('name'),
                 username = data.get('username'),
                 email = data.get('email'),
-                # phone_number = data['phone_number'],
-                # dob = data['dob'],
-                # profile_image = data['profile_image'],
-                # location = data['location'],
-                # about = data['about'],
-                # category_mom_id = data.get('category_mom_id'),
-                # interest_id = data.get('interest_id')
             )
             new_user.password_hash = data.get('password')
             db.session.add(new_user)
             db.session.commit()
-            # session['user_id'] = new_user.id
             login_user(new_user, remember=True)
             return make_response(new_user.serialize, 201)
         except Exception as e:
@@ -48,8 +34,6 @@ class Signup(Resource):
         
 api.add_resource(Signup, '/signup')
 
-
-#============= LOGIN ===============#
 class Login(Resource):
     def post(self):
         try: 
@@ -59,7 +43,6 @@ class Login(Resource):
 
             if user.authenticate(password):
                 login_user(user, remember=True)
-                # session['user_id'] = user.id
                 return user.serialize, 200
             
             if not user:
@@ -71,29 +54,18 @@ class Login(Resource):
     
 api.add_resource(Login, '/login')
 
-
-
-#============= LOGOUT ===============#
-
 class Logout(Resource):
     def post(self):
         logout_user()
-        # session['user_id'] = None
-        # ipdb.set_trace()
         return 'Goodbye, Mama! Have a great day!', 200
 api.add_resource(Logout, '/logout')
 
-
-#============= AUTHORIZE SESSION ===============#
 class AuthorizedSession(Resource):
     def get(self):
         try:
             if current_user.is_authenticated:
                 user = current_user.serialize
                 return make_response(user, 200)
-            # user = User.query.filter_by(
-            #     id = session.get('user_id')).first()
-        
         except:
             return make_response('Not Authorized', 401)
 
@@ -104,13 +76,10 @@ api.add_resource(AuthorizedSession, '/authorize_session')
 class FilteredUsers(Resource):
     def get(self, id):
         try: 
-            # user = User.query.filter_by(id=id).first()
-            #all friendships for user
             all_user_friendships = Friendship.query.filter(
                 (Friendship.receiving_user_id == id) |
                 (Friendship.requesting_user_id == id)
             ).all()
-            #list of only ids
             friend_ids = []
             for friendship in all_user_friendships:
                 friend_ids.append(friendship.receiving_user_id)
@@ -124,9 +93,6 @@ class FilteredUsers(Resource):
         
 api.add_resource(FilteredUsers, '/filtered_users/<int:id>')     
 
-
-
-#============GETS, PATCHES, OR DELETE'S CURRENT USER'S INFORMATION================#
 class CurrentUser(Resource):
     def get(self, id):
         try: 
@@ -143,7 +109,6 @@ class CurrentUser(Resource):
         try: 
             user_info = User.query.filter_by(id=id).first()
             if user_info:
-                #if attr is mom_life or interested - 
                 for attr in data:
                     setattr(user_info, attr, data.get(attr))
                     
@@ -152,7 +117,6 @@ class CurrentUser(Resource):
                 return make_response(user_info.serialize, 200)
             else:
                 return {"Validation error"}, 400
-            # return {"User not found"}, 404
         except Exception as e:
             traceback.print_exc()
             return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500
@@ -172,9 +136,6 @@ class CurrentUser(Resource):
 api.add_resource(CurrentUser, '/current_user/<int:id>')
      
 
-
-
-#=============== POST - CREATES A NEW FRIENDSHIP ===============# 
 class UserFriendships(Resource):
     def post(self):
         data = request.get_json()
@@ -191,11 +152,6 @@ class UserFriendships(Resource):
             return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500
 api.add_resource(UserFriendships, '/user_friendships')
 
-
-
-
-#=============GETS LIST OF USERS TIED TO FRIENDSHIP WITH CURRENT USER =============#
-#=============PENDING OR CONFIRMED STATUS==================#
 @app.route('/user_friendships/<int:id>/<string:status>')
 def get_confirmed_friends(id, status):
         user = User.query.filter_by(id=id).first()
@@ -223,20 +179,11 @@ def get_confirmed_friends(id, status):
                 
             friendship_users = User.query.filter(User.id.in_(friend_ids) & (User.id != user.id)).all()
             serialized_users = [friendship_user.serialize for friendship_user in friendship_users]
-
-        # Return serialized users as a list
             return make_response(serialized_users, 200)
         except Exception as e:
             traceback.print_exc()
             return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500
 
-
-
-#>>>>COULD USE THIS ROUTE TO POPULATE MESSAGES LIST
-#MESSAGES LIST WOULD SHOW MESSAGES[1]
-#CLICK ON MESSAGE WOULD TAKE TO CONVERSATION COMPONENT
-#THIS WILL FURTHER POPULATE ALL THE MESSAGES WITH A MAP
-#===============GET ALL USER CONFIRMED FRIENDSHIPS MESSAGES=======================#
 @app.route('/user_friendships/<int:id>')
 def get_all_friendships(id):
     user = User.query.filter_by(id=id).first()
@@ -254,12 +201,6 @@ def get_all_friendships(id):
         traceback.print_exc()
         return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500
 
-
-
-
-#============== PATCH OR DELETE SINGLE FRIENDSHIP =============#
-#GET can be deleted later
-# Change's friendship status or delete's friendship
 class FriendshipById(Resource):
     def patch(self, user_id, friend_id):
         data = request.get_json()
@@ -296,11 +237,6 @@ class FriendshipById(Resource):
 
 api.add_resource(FriendshipById, '/friendship/<int:user_id>/<int:friend_id>')
 
-
-
-
-#================= GETS ALL MESSAGES & CREATES NEW MESSAGE FOR FRIENDSHIP ==================#
-# creates new message
 class Messages(Resource):
     def get(self, id, friend_id):
         user = User.query.filter_by(id=id).first()
@@ -338,15 +274,8 @@ class Messages(Resource):
             traceback.print_exc()
             return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500 
 
-    def delete(self, id, friend_id):
-        pass    
-
 api.add_resource(Messages, '/messages/<int:id>/<int:friend_id>')
 
-
-
-
-#=============GETS SINGLE FRIENDSHIP BY FRIENDSHIP ID===============#
 
 @app.route('/single_friendship/<int:friendship_id>')
 def get_single_friendship(friendship_id):
@@ -357,8 +286,6 @@ def get_single_friendship(friendship_id):
         traceback.print_exc()
         return {"error": "An error occurred while fetching the order history", "message": str(e)}, 500
     
-
-
 
 if __name__ == '__main__':
     app.run(port=5555)

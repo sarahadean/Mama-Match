@@ -13,11 +13,6 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import RadioGroup from '@mui/material/RadioGroup';
 
-
-
-
-
-
 function Profile() {
   const { user, setUser } = useContext(UserContext);
   const [error, setError] = useState(null);

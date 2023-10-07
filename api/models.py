@@ -1,7 +1,4 @@
 from sqlalchemy_serializer import SerializerMixin
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import validates
-from sqlalchemy import MetaData
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 from api.config import db, bcrypt
@@ -16,9 +13,7 @@ class Friendship(db.Model, SerializerMixin):
     receiving_user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     status = db.Column(db.String)
     
-    #Relationship - Friendship has many messages. Messages has ONE friendship
     messages = db.relationship('Message', backref='friendships', cascade="all, delete-orphan")
-    # friendship_status = db.relationship('FriendshipStatus', back_populates='friendship', cascade="all, delete-orphan"  )
 
     @property
     def serialize(self):
@@ -43,7 +38,6 @@ class User(db.Model, SerializerMixin, UserMixin):
     email = db.Column(db.String)
     phone_number = db.Column(db.String)
     dob = db.Column(db.String) #<------change data-type to date later?
-    # gender = db.Column(db.String)
     profile_image = db.Column(db.String)
     location = db.Column(db.String)
     about = db.Column(db.String)
@@ -52,19 +46,15 @@ class User(db.Model, SerializerMixin, UserMixin):
     category_mom_id = db.Column(db.Integer, db.ForeignKey('category_moms.id'))
     interest_id = db.Column(db.Integer, db.ForeignKey('interests.id'))
 
-    #relationships
     mom_life = db.relationship('Category_Mom', backref='users')
     interests = db.relationship('Interest', backref='users')
     messages = db.relationship('Message', back_populates="author")
 
-    #friendship relationships:
     friends_requested = db.relationship('Friendship', foreign_keys=[Friendship.requesting_user_id],  backref='receiving_user', cascade="all, delete-orphan")
     requests_received = db.relationship('Friendship', foreign_keys=[Friendship.receiving_user_id], backref='requesting_user', cascade="all, delete-orphan")
 
-    #association proxies
     pending_friend = association_proxy('friends_requested', 'receiving_user')
     aspiring_friend = association_proxy('requests_received', 'requesting_user')
-
     
     @hybrid_property
     def password_hash(self):
@@ -92,15 +82,9 @@ class User(db.Model, SerializerMixin, UserMixin):
             'dob': self.dob,
             'profile_image': self.profile_image, 
             'location': self.location,
-            'about' : self.about,
-            # 'mom_life':self.mom_life.type,
-            # 'interests':self.interests.activity,
-            # 'friends_requested':self.friends_requested,
-            # 'requests_received':self.requests_received
+            'about' : self.about
         }
     
-
-
 class Message(db.Model, SerializerMixin):
     __tablename__ = "messages"
     id = db.Column(db.Integer, primary_key=True)
@@ -110,10 +94,7 @@ class Message(db.Model, SerializerMixin):
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     content = db.Column(db.String)
 
-    #RELATIONSHIP
     author = db.relationship('User', back_populates="messages", lazy="joined")
-    # friendship = db.relationship('Friendship', back_populates='message')
-    # friendship_status = db.relationship('FriendshipStatus', back_populates='message', cascade="all, delete-orphan" )
     
     @property
     def serialize(self):
@@ -156,12 +137,6 @@ class Interest(db.Model):
     def __repr__(self):
         return f'{self.activity}'
     
-# class Selection(db.Model):
-#     __tablename__ = "selections"
-
-#     id = db.Column(db.Integer, primary_key=True)
-#     interest_id
-#     activity_id
 
     
 
