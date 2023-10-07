@@ -21,7 +21,7 @@ function PendingList() {
 // need fetch route just getting friendship to save in state. 
   function fetchUsers(){
     if (user){
-      fetch(`/api/user_friendships/${user.id}/PENDING`)
+      fetch(`/user_friendships/${user.id}/PENDING`)
         .then(res => {
           if (res.ok) {
             // console.log(res)

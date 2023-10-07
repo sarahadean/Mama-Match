@@ -17,7 +17,7 @@ function NavBar({navigate}) {
   const welcome = <NavLink className="button" to="/">Welcome</NavLink>
 
   function handleLogout() {
-		fetch("/api/logout", {
+		fetch("/logout", {
       method: "POST",
       headers: {
         "content-type" : "application/json"

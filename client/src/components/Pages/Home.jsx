@@ -23,7 +23,7 @@ function Home() {
   //fetching users who are not in friendship with current user
   function fetchUsers(){
     if (user){
-      fetch(`/api/filtered_users/${user.id}`)
+      fetch(`/filtered_users/${user.id}`)
         .then(res => {
           console.log(res)
           if (res.ok) {

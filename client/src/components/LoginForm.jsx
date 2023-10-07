@@ -44,7 +44,7 @@ function LoginForm({navigate}) {
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
           console.log(values)
-          fetch('/api/login', {
+          fetch('/login', {
             method: "POST",
             headers: {
               "content-type": "application/json"

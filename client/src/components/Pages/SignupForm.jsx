@@ -41,7 +41,7 @@ function SignupForm({updateUser}) {
       }}
       validationSchema= {schema}
       onSubmit={(values, actions) => {
-            fetch("/api/signup", {
+            fetch("/signup", {
                 method: "POST",
                 headers: {
                     "content-type" : "application/json"

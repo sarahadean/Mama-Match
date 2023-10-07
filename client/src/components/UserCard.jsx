@@ -22,7 +22,7 @@ function UserCard({ friend, friends, updateFriend }) {
 
   function handleSubmit(e, value){
     console.log(value)
-    fetch('/api/user_friendships', {
+    fetch('/user_friendships', {
       method: "POST",
       headers: {
       "content-type": "application/json"

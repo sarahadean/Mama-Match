@@ -21,7 +21,7 @@ function FriendsList({friendship, updateFriendship}) {
 
   function fetchUsers(){
     if (user){
-      fetch(`/api/user_friendships/${user.id}/CONFIRMED`)
+      fetch(`/user_friendships/${user.id}/CONFIRMED`)
         .then(res => {
           // console.log(res)
           if (res.ok) {

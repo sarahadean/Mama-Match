@@ -23,7 +23,7 @@ function Profile() {
   const toggleEdit = () => setEdit((prev) => !prev);
 
   function handleDelete(){
-    fetch(`/api/current_user/${user.id}`, {
+    fetch(`/current_user/${user.id}`, {
     method: "DELETE",
     headers:{
     "content-type": "application/json"
@@ -131,7 +131,7 @@ function Profile() {
           // validationSchema={validationSchema}
           onSubmit={(values, actions) => {
             console.log(values)
-            fetch(`/api/current_user/${user.id}`, {
+            fetch(`/current_user/${user.id}`, {
               method: "PATCH",
               headers: {
                 "content-type": "application/json",
@@ -331,7 +331,7 @@ function Profile() {
     //       // validationSchema={validationSchema}
     //       onSubmit={(values, actions) => {
     //         console.log(values)
-    //         fetch(`/api/current_user/${user.id}`, {
+    //         fetch(`/current_user/${user.id}`, {
     //           method: "PATCH",
     //           headers: {
     //             "content-type": "application/json",

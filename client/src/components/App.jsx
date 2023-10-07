@@ -29,7 +29,7 @@ function App() {
   //authorize session
   function authorizeUser(){
     if (user == null) {
-      fetch('/api/authorize_session')
+      fetch('/authorize_session')
       .then(response => {
         if (response.ok) {
           return response.json().then((user) => setUser(user))

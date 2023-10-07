@@ -31,7 +31,7 @@ function FriendsCard({friend, friendship, updateFriendship}) {
 
 //<----------DELETES FRIEND---------------->
 function handleDelete(){
-  fetch(`/api/friendship/${user.id}/${id}`, {
+  fetch(`/friendship/${user.id}/${id}`, {
     method: "DELETE",
     headers: {
     "content-type": "application/json"

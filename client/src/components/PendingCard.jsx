@@ -23,7 +23,7 @@ function PendingCard({updatePendingFriendsList, pendingFriends, friend}) {
     console.log(id)
 
     
-    fetch(`/api/friendship/${user.id}/${id}`, {
+    fetch(`/friendship/${user.id}/${id}`, {
       method: "PATCH",
       headers: {
       "content-type": "application/json"

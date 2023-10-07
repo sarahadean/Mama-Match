@@ -15,7 +15,7 @@ function MessagesList() {
   
 
   useEffect(() => {
-    fetch(`/api/user_friendships/${user.id}`)
+    fetch(`/user_friendships/${user.id}`)
     .then(res => {
       console.log(res)
       if (res.ok) {

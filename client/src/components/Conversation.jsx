@@ -22,7 +22,7 @@ function Conversation() {
 
 
 useEffect(() => {
-  fetch(`/api/messages/${user.id}/${id}`)
+  fetch(`/messages/${user.id}/${id}`)
   .then(res => {
     console.log(res)
     if (res.ok) {
@@ -61,7 +61,7 @@ console.log(messages)
         }}
         onSubmit={(values, actions) => {
           console.log(values);
-          fetch(`/api/messages/${user.id}/${id}`, {
+          fetch(`/messages/${user.id}/${id}`, {
             method: 'POST',
             headers: {
               'content-type': 'application/json',
