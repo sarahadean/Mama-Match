@@ -4,7 +4,7 @@ import * as yup from "yup";
 import {useNavigate} from "react-router-dom"
 import UserContext from './UserContext';
 // import { TextField } from 'formik-mui';
-import TextField from 'formik-mui/TextField';
+import { TextField } from 'formik-mui';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box'
